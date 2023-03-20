@@ -3,18 +3,17 @@ getSumBtn.append("Get Total Price");
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-  const priceArr = document.querySelectorAll('.price')
-   let sum=0;
-	priceArr.forEach(price => {
-		sum+=parseFloat(price.innerText)
-	})
-const table = document.querySelector('table');
-const newRow = table.insertRow();
-const newCell = newRow.insertCell();
-newCell.colSpan = 2;
-newCell.innerText = `Total: ${sum.toFixed(2)}`;
-
+//Add your code here
+	let prices = document.querySelectorAll('.price');
+	let sum = 0;
+	prices.forEach(price => {
+		sum += parseFloat(price.textContent);
+	});
+	document.getElementById('table').innerHTML += `
+	   <tr id="ans">
+          <td></td>
+          <td>${sum}</td>
+        </tr>`
 };
 
-getSumBtn.addEventListener("click", getSum);
-
+getSumBtn.addEventListener("click", getSum)
